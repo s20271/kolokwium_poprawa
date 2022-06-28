@@ -22,6 +22,8 @@ namespace kolokwium.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetTeam(int id)
         {
+         //   if (!await _dbService.DoeasTeamExist(id)) return NotFound("Album o podanym id nie istnieje");
+
             var team = await _dbService.GetTeam(id);
             return Ok(team);
         }
